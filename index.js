@@ -21,7 +21,9 @@ const URI = process.env.MongoDBURI;
 
 //connect mongoDB
 try {
-  mongoose.connect(URI);
+  mongoose.connect(URI, {
+    connectTimeoutMS: 10000, // Timeout after 10 seconds
+  });
   // , {
   //   useNewUrlParser: true,
   //   useUnifiedTopology: true,
